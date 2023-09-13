@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">projeManage</string>
+
+    <string name="intro_description_title_text">さぁ！始めよう!!</string>
+    <string name="intro_description_text">Collaborate and Plan Together Across Multiple\nDevices on Projemanag\'s Minimalist interface.</string>
+    <string name="intro_sign_in_text">SIGN IN</string>
+    <string name="intro_sign_up_text">SIGN UP</string>
+
+    <string name="sign_up_title">SIGN UP</string>
+    <string name="sign_up_description_text">名前、メールアドレス、パスワードを入れてください</string>
+    <string name="name">name</string>
+    <string name="password">password</string>
+    <string name="email">Email</string>
+
+    <string name="sign_in_title">SIGN IN</string>
+    <string name="sign_in_description_text">名前、メールアドレス、パスワードを入れてください</string>
+
 </resources>
