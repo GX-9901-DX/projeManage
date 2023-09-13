@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".IntroActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:text="@string/app_name"
+        android:textSize="30dp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold" />
+<!--TODO 画像追加 -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="10dp"
+        tools:src = "@drawable/ic_launcher_background"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/intro_description_title_text"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/intro_description_text" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_sign_in"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/sign_in_intro_button"
+        android:text="@string/intro_sign_in_text"
+        android:background="@drawable/shape_button_round" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_sign_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/sign_up_intro_button"
+        android:text="@string/intro_sign_up_text"
+        android:background="@drawable/white_border_shape_button_round" />
+
+</LinearLayout>
