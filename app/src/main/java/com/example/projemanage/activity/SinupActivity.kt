@@ -1,10 +1,11 @@
-package com.example.projemanage
+package com.example.projemanage.activity
 
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowInsets
 import android.view.WindowManager
+import com.example.projemanage.R
 import com.example.projemanage.databinding.ActivitySinupBinding
 
 class SinupActivity : AppCompatActivity() {
