@@ -8,7 +8,7 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import com.example.projemanage.databinding.ActivityIntroBinding
 
-class IntroActivity : AppCompatActivity() {
+class IntroActivity : BaseActivity() {
     private var binding: ActivityIntroBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

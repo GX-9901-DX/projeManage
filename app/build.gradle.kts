@@ -51,6 +51,10 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
+//    TODO if you need, Import the Firebase BoM
+//    implementation(platform("com.google.firebase:firebase-bom:32.2.3"))
+//    TODO 使いたいfirebaseプロダクトにより依存関係を追加してください BoMを使う場合は依存関係のバージョンは特段必要ない
+//    implementation("com.google.firebase:firebase-analytics-ktx:21.3.0")
     implementation("com.google.gms:google-services:4.3.15")
     implementation("com.google.firebase:firebase-auth:22.1.1")
 }
