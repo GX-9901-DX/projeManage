@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            style="@style/login_card_view"
+            style="@style/start_card_view"
             android:elevation="@dimen/cardview_default_elevation"
             app:cardCornerRadius="@dimen/cardview_default_elevation">
 

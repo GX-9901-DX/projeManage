@@ -10,7 +10,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="login_card_view">
+    <style name="start_card_view">
         <item name="android:layout_marginStart">25dp</item>
         <item name="android:layout_marginEnd">25dp</item>
         <item name="android:layout_marginTop">60dp</item>
