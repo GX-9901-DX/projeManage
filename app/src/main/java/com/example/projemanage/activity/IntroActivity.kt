@@ -1,20 +1,19 @@
-package com.example.projemanage
+package com.example.projemanage.activity
 
 import android.content.Intent
-import android.graphics.Typeface
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.WindowInsets
 import android.view.WindowManager
-import android.widget.TextView
+import com.example.projemanage.databinding.ActivityIntroBinding
 
-class SplashActivity : AppCompatActivity() {
+class IntroActivity : BaseActivity() {
+    private var binding: ActivityIntroBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
+        binding = ActivityIntroBinding.inflate(layoutInflater)
+        setContentView(binding?.root)
 
         @Suppress("deprecation")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
@@ -26,14 +25,14 @@ class SplashActivity : AppCompatActivity() {
             )
         }
 
-        // TODO フリーのフォントを使ってみよう
-//        val typeface:Typeface = Typeface.createFromAsset(assets, "")
-//        val tv_app_name: TextView = findViewById(R.id.tv_app_name)
-//        tv_app_name.typeface =typeface
+        binding?.btnSignIn?.setOnClickListener {
+            startActivity(Intent(this, SigninActivity::class.java))
+        }
 
-        Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, IntroActivity::class.java))
-            finish()
-        }, 2500)
+        binding?.btnSignUp?.setOnClickListener {
+            val intent = Intent(this, SinupActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }
