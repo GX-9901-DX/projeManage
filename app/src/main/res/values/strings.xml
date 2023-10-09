@@ -18,4 +18,7 @@
 
     <string name="check_message_for_back_to_exit">戻るボタンを押すと閉じることができます。</string>
 
+    <string name="my_profile">プロファイル</string>
+    <string name="sign_out">サインアウト</string>
+
 </resources>

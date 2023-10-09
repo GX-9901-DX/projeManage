@@ -15,7 +15,7 @@ import com.google.firebase.auth.FirebaseAuth
 class SigninActivity : BaseActivity() {
     private var binding:ActivitySigninBinding? = null
     private lateinit var auth: FirebaseAuth
-    private val TAG:String = localClassName
+    private val TAG = localClassName
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySigninBinding.inflate(layoutInflater)

@@ -9,11 +9,13 @@ import android.view.WindowManager
 import android.widget.Toast
 import com.example.projemanage.R
 import com.example.projemanage.databinding.ActivitySinupBinding
+import com.example.projemanage.firebase.fireStoreClass
+import com.example.projemanage.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
 class SinupActivity : BaseActivity() {
-    private var binding:ActivitySinupBinding? = null
+    private var binding: ActivitySinupBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,44 +52,62 @@ class SinupActivity : BaseActivity() {
     }
 
     private fun registerUser() {
-        val name:String = binding?.etName?.text.toString().trim { it <= ' ' }
+        val name: String = binding?.etName?.text.toString().trim { it <= ' ' }
         val email: String = binding?.etEmail?.text.toString().trim { it <= ' ' }
         val password: String = binding?.etPassword?.text.toString().trim { it <= ' ' }
 
         if (validateForm(name, email, password)) {
             showProgressDialog(getString(R.string.load_dialog_message))
-            FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password).addOnCompleteListener {
-                task ->
-                hideProgressDialog()
-                if (task.isSuccessful) {
-                    val firebaseUser: FirebaseUser? = task.result.user
-                    val firebaseEmail = firebaseUser?.email
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener { task ->
+//                    hideProgressDialog()
+                    if (task.isSuccessful) {
+                        val firebaseUser: FirebaseUser = task.result.user!!
+                        val firebaseEmail = firebaseUser.email
+                        val user = User(firebaseUser.uid, name, email)
 
-                    FirebaseAuth.getInstance().signOut()
-                    finish()
-                } else {
-                    // TODO　サインアップ失敗時の Error Dialog
+                        fireStoreClass().registerUser(this, user)
+                        FirebaseAuth.getInstance().signOut()
+                        finish()
+                    } else {
+                        // TODO　サインアップ失敗時の Error Dialog
+                    }
                 }
-            }
-            Toast.makeText(this,"test enable register", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "test enable register", Toast.LENGTH_SHORT).show()
         }
     }
 
-    private fun validateForm(name:String, email:String, password: String): Boolean {
+    private fun validateForm(name: String, email: String, password: String): Boolean {
         return when {
             TextUtils.isEmpty(name) -> {
                 showErrorSnackBar("名前を入れてください")
                 false
             }
+
             TextUtils.isEmpty(email) -> {
                 showErrorSnackBar("EMailを入れてください")
                 false
             }
+
             TextUtils.isEmpty(password) -> {
                 showErrorSnackBar("passwordを入れてください")
                 false
             }
-            else -> { true }
+
+            else -> {
+                true
+            }
         }
     }
-}
+
+
+    fun userRegisterdSuccess() {
+        Toast.makeText(
+            this,
+            "You have successfully registered the email address ${registerUser()}",
+            Toast.LENGTH_LONG).show()
+        hideProgressDialog()
+        FirebaseAuth.getInstance().signOut()
+        finish()
+    }
+ }

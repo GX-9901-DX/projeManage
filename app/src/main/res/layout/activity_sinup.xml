@@ -9,12 +9,11 @@
     tools:context=".activity.SinupActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_sign_up"
+        android:id="@+id/toolbarSignUp"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize">
 
         <TextView
-            android:id="@+id/tv_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
@@ -60,7 +59,7 @@
                     android:layout_marginEnd="10dp">
 
                     <androidx.appcompat.widget.AppCompatEditText
-                        android:id="@+id/et_name"
+                        android:id="@+id/etName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/name"
@@ -75,7 +74,7 @@
                     android:layout_marginEnd="10dp">
 
                     <androidx.appcompat.widget.AppCompatEditText
-                        android:id="@+id/et_email"
+                        android:id="@+id/etEmail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/email"
@@ -90,7 +89,7 @@
                     android:layout_marginEnd="10dp">
 
                     <androidx.appcompat.widget.AppCompatEditText
-                        android:id="@+id/et_password"
+                        android:id="@+id/etPassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/password"
@@ -98,7 +97,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_sign_up"
+                    android:id="@+id/btnSignUp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
