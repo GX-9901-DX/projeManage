@@ -1,4 +1,4 @@
-package com.example.projemanage
+package com.example.projemanage.activity
 
 import android.content.Intent
 import android.os.Build
@@ -8,7 +8,7 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import com.example.projemanage.databinding.ActivityIntroBinding
 
-class IntroActivity : AppCompatActivity() {
+class IntroActivity : BaseActivity() {
     private var binding: ActivityIntroBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +26,7 @@ class IntroActivity : AppCompatActivity() {
         }
 
         binding?.btnSignIn?.setOnClickListener {
-            startActivity(Intent(this,SigninActivity::class.java))
+            startActivity(Intent(this, SigninActivity::class.java))
         }
 
         binding?.btnSignUp?.setOnClickListener {
