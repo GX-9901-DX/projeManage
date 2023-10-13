@@ -61,4 +61,7 @@ dependencies {
     implementation("com.google.firebase:firebase-auth:22.1.2")
 //    // Firebase Cloud Firestore Dependency
     implementation("com.google.firebase:firebase-firestore:24.8.1")
+
+    // メニューのサークル表示のため
+    implementation("de.hdodenhof:circleimageview:3.1.0")
 }
