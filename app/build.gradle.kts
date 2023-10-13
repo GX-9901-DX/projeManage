@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "com.example.projemanage"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.projemanage"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -51,12 +51,14 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
-////    TODO if you need, Import the Firebase BoM
+//    TODO if you need, Import the Firebase BoM
 //    implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
-//////    TODO 使いたいfirebaseプロダクトにより依存関係を追加してください BoMを使う場合は依存関係のバージョンは特段必要ない
+//    TODO 使いたいfirebaseプロダクトにより依存関係を追加してください BoMを使う場合は依存関係のバージョンは特段必要ない
 //    implementation("com.google.firebase:firebase-analytics-ktx:21.3.0")
 //    implementation("com.google.gms:google-services:4.4.0")
-//    implementation("com.google.firebase:firebase-auth:22.1.2")
-////    // Firebase Cloud Firestore Dependency
-//    implementation("com.google.firebase:firebase-firestore:24.8.1")
+
+
+    implementation("com.google.firebase:firebase-auth:22.1.2")
+//    // Firebase Cloud Firestore Dependency
+    implementation("com.google.firebase:firebase-firestore:24.8.1")
 }

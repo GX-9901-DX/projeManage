@@ -60,15 +60,12 @@ class SinupActivity : BaseActivity() {
             showProgressDialog(getString(R.string.load_dialog_message))
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
-//                    hideProgressDialog()
                     if (task.isSuccessful) {
                         val firebaseUser: FirebaseUser = task.result.user!!
                         val firebaseEmail = firebaseUser.email
-                        val user = User(firebaseUser.uid, name, email)
+                        val user = User(firebaseUser.uid, name, firebaseEmail!!)
 
                         fireStoreClass().registerUser(this, user)
-                        FirebaseAuth.getInstance().signOut()
-                        finish()
                     } else {
                         // TODO　サインアップ失敗時の Error Dialog
                     }

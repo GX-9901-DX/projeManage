@@ -10,12 +10,13 @@ import android.view.WindowManager
 import android.widget.Toast
 import com.example.projemanage.R
 import com.example.projemanage.databinding.ActivitySigninBinding
+import com.example.projemanage.model.User
 import com.google.firebase.auth.FirebaseAuth
 
 class SigninActivity : BaseActivity() {
     private var binding:ActivitySigninBinding? = null
     private lateinit var auth: FirebaseAuth
-    private val TAG = localClassName
+    private val TAG = "SigninActivity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySigninBinding.inflate(layoutInflater)
@@ -55,6 +56,7 @@ class SigninActivity : BaseActivity() {
         if (validateForm(email, password)) {
             showProgressDialog(resources.getString(R.string.load_dialog_message))
             // TODO ログイン処理を追加する
+            auth = FirebaseAuth.getInstance()
             auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
                 hideProgressDialog()
                 if (task.isSuccessful) {
@@ -71,6 +73,12 @@ class SigninActivity : BaseActivity() {
         } else {
             // TODO 入力不備時のダイアログを表示する
         }
+    }
+
+    fun signInSuccess(user: User) {
+        hideProgressDialog()
+        startActivity(Intent(this, MainActivity::class.java))
+        finish()
     }
 
     private fun validateForm(email:String, password: String): Boolean {
