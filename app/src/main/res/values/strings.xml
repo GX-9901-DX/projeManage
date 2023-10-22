@@ -21,4 +21,6 @@
     <string name="my_profile">プロファイル</string>
     <string name="sign_out">サインアウト</string>
 
+    <string name="image_contentDescription">写真</string>
+
 </resources>

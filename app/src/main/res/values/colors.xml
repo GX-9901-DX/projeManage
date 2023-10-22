@@ -9,4 +9,6 @@
     <color name="primary_text_color">#363A43</color>
 
     <color name="snack_error_color">#FF0000</color>
+
+    <color name="color_divider">#8C8C8C</color>
 </resources>
