@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--  灰色一本戦の大きさ -->
+    <dimen name="divider_height">0.5dp</dimen>
 
     <dimen name="splash_screen_text_size">30dp</dimen>
     <dimen name="action_bar_title_text_size">15dp</dimen>
     <dimen name="description_text_size">12dp</dimen>
+    
+    <dimen name="hight_of_nav_main">200dp</dimen>
+    <dimen name="nav_image_size">80dp</dimen>
+    <dimen name="nav_image_circular_border_width">2dp</dimen>
+
 
     <!-- menu bar -->
 </resources>
